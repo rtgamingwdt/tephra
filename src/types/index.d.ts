@@ -5,6 +5,6 @@ export interface Config {
 export interface File {
   name: string;
   path: string;
-  content: string;
+  content: string[];
   saved: boolean;
 }
