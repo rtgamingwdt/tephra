@@ -1,0 +1,146 @@
+:root {
+  --background: rgb(44, 50, 65);
+  --sidebar: rgb(22, 25, 40);
+  --file-drawer: rgb(35, 40, 55);
+}
+
+div.titlebar {
+  height: 30px;
+  background: var(--sidebar);
+  user-select: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button.titlebar {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+button.titlebar:hover {
+  background: #5bbec3;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+}
+
+div#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+div.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+div.sidebar {
+  width: 64px;
+  height: 100%;
+  background-color: var(--sidebar);
+}
+
+div.file-drawer {
+  width: 256px;
+  height: 100%;
+  background-color: var(--file-drawer);
+}
+
+div.file-drawer-slider {
+  width: 1px;
+  height: 100%;
+  background-color: var(--file-drawer);
+  filter: brightness(75%);
+}
+
+div.tabs {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  overflow-x: auto;
+  background-color: var(--file-drawer);
+}
+
+div.tab {
+  width: 128px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+div.tab span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: red;
+}
+
+div.tab span[saved="true"] {
+  color: green;
+}
+
+div.tab button.close {
+  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+div.tab[active="true"] {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.tab[active="true"] button.close {
+  visibility: visible;
+}
+
+div.editor {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+div[role="textarea"] {
+  width: 100%;
+  height: 100%;
+  color: white;
+  outline: none;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+main.view {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
