@@ -11,7 +11,7 @@ export default function TitleBar() {
             <button className="titlebar" onClick={() => appWindow.toggleMaximize()}>
                 <FaRegWindowMaximize />
             </button>
-            <button className="titlebar" onClick={() => appWindow.close()}>
+            <button className="titlebar close" onClick={() => appWindow.close()}>
                 <FaRegWindowClose />
             </button>
         </div>
