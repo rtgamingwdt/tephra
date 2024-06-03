@@ -1,7 +1,15 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(OpenSans-VariableFont_wdth,wght.ttf);
+}
+
 :root {
+  --accent: rgb(88, 101, 242);
+  --danger: rgb(242, 101, 88);
   --background: rgb(44, 50, 65);
   --sidebar: rgb(22, 25, 40);
   --file-drawer: rgb(35, 40, 55);
+  --symbol: rgb(128, 128, 128);
 }
 
 div.titlebar {
@@ -25,7 +33,11 @@ button.titlebar {
 }
 
 button.titlebar:hover {
-  background: #5bbec3;
+  background-color: var(--accent);
+}
+
+button.titlebar.close:hover {
+  background-color: var(--danger);
 }
 
 html {
@@ -70,10 +82,11 @@ div.file-drawer {
 }
 
 div.file-drawer-slider {
-  width: 1px;
+  width: 2.5px;
   height: 100%;
   background-color: var(--file-drawer);
   filter: brightness(75%);
+  cursor: col-resize;
 }
 
 div.tabs {
@@ -113,6 +126,7 @@ div.tab button.close {
   border: none;
   outline: none;
   cursor: pointer;
+  color: white;
 }
 
 div.tab[active="true"] {
@@ -126,7 +140,35 @@ div.tab[active="true"] button.close {
 div.editor {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+div.editor-content {
+  width: 100%;
+  overflow-y: auto;
+}
+
+div.editor span.line {
+  color: white;
+  font-size: large;
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+span.line .symbol {
+  color: var(--symbol)
+}
+
+div.no-file-open {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 div[role="textarea"] {
@@ -143,4 +185,12 @@ main.view {
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
